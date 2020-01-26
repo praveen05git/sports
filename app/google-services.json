@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "238949521563",
+    "firebase_url": "https://sports-6cb17.firebaseio.com",
+    "project_id": "sports-6cb17",
+    "storage_bucket": "sports-6cb17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:238949521563:android:331ba4d6c0d674432dce3e",
+        "android_client_info": {
+          "package_name": "com.hencesimplified.sandsports"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "238949521563-10g8p1r2eg06jlqudr7t8dp8fsfirhe0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hencesimplified.sandsports",
+            "certificate_hash": "ae88dde169f0fa423efa2c7831a7c2d335a9a392"
+          }
+        },
+        {
+          "client_id": "238949521563-th9d9cijqaqr877c9or5vnbe19bfh04h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM5f7ovPEcXYbcaaFIKkhPxPjyVYq7Els"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "238949521563-th9d9cijqaqr877c9or5vnbe19bfh04h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
