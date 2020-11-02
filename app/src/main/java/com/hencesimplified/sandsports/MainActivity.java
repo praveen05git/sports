@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     g_list_cls = ds.getValue(GamesList.class);
-                    list.add(g_list_cls.getgName());
+                    list.add(g_list_cls.getGname());
                 }
 
                 try {

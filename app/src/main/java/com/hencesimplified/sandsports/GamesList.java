@@ -2,18 +2,18 @@ package com.hencesimplified.sandsports;
 
 public class GamesList {
 
-    String gName;
+    String gname;
 
-    public String getgName() {
-        return gName;
+    public String getGname() {
+        return gname;
     }
 
-    public void setgName(String gName) {
-        this.gName = gName;
+    public void setGname(String gname) {
+        this.gname = gname;
     }
 
-    public GamesList(String gName) {
-        this.gName = gName;
+    public GamesList(String gname) {
+        this.gname = gname;
     }
 
     public GamesList() {
