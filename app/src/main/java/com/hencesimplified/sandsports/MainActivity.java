@@ -33,30 +33,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        games_listview=findViewById(R.id.games_list);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        games_listview = findViewById(R.id.games_list);
 
-        g_list_cls=new games_list();
+        g_list_cls = new games_list();
 
-        databaseReference=firebaseDatabase.getReference("games/");
+        databaseReference = firebaseDatabase.getReference("games/");
 
-        list=new ArrayList<>();
-        adapter=new ArrayAdapter<>(getApplicationContext(),R.layout.txtviewlist,R.id.txt_for_list,list);
+        list = new ArrayList<>();
+        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.txtviewlist, R.id.txt_for_list, list);
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds: dataSnapshot.getChildren())
-                {
-                    g_list_cls=ds.getValue(games_list.class);
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    g_list_cls = ds.getValue(games_list.class);
                     list.add(g_list_cls.getG_name());
                 }
 
-                try{
+                try {
                     games_listview.setAdapter(adapter);
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                     System.out.println(e);
                 }
             }
@@ -73,12 +71,11 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
 
-                Toast.makeText(getApplicationContext(),list.get(i),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), list.get(i), Toast.LENGTH_SHORT).show();
 
-                Intent tournament_view_intent=new Intent(getApplicationContext(),Tournaments.class);
-                tournament_view_intent.putExtra("games_id",list.get(i));
+                Intent tournament_view_intent = new Intent(getApplicationContext(), Tournaments.class);
+                tournament_view_intent.putExtra("games_id", list.get(i));
                 startActivity(tournament_view_intent);
-
 
 
             }

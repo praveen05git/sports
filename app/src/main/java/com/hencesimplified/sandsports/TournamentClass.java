@@ -1,12 +1,12 @@
 package com.hencesimplified.sandsports;
 
-public class tournament_cls {
+public class TournamentClass {
 
     String t_name;
     String game;
 
 
-    public tournament_cls() {
+    public TournamentClass() {
     }
 
     public String getT_name() {
@@ -25,7 +25,7 @@ public class tournament_cls {
         this.game = game;
     }
 
-    public tournament_cls(String t_name, String game) {
+    public TournamentClass(String t_name, String game) {
         this.t_name = t_name;
         this.game = game;
     }

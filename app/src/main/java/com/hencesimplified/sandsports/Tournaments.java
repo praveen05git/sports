@@ -21,7 +21,7 @@ public class Tournaments extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ListView t_listview;
-    tournament_cls t_list_cls;
+    TournamentClass t_list_cls;
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
     String t_name_id;
@@ -31,38 +31,35 @@ public class Tournaments extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tournaments);
 
-        Intent intent=getIntent();
-        t_name_id=intent.getStringExtra("games_id");
+        Intent intent = getIntent();
+        t_name_id = intent.getStringExtra("games_id");
 
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        t_listview=findViewById(R.id.tourn_list);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        t_listview = findViewById(R.id.tourn_list);
 
-        t_list_cls=new tournament_cls();
+        t_list_cls = new TournamentClass();
 
 
-        databaseReference=firebaseDatabase.getReference("tournament/");
+        databaseReference = firebaseDatabase.getReference("tournament/");
 
-        list=new ArrayList<>();
-        adapter=new ArrayAdapter<>(getApplicationContext(),R.layout.txtviewlist,R.id.txt_for_list,list);
+        list = new ArrayList<>();
+        adapter = new ArrayAdapter<>(getApplicationContext(), R.layout.txtviewlist, R.id.txt_for_list, list);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds: dataSnapshot.getChildren())
-                {
-                    t_list_cls=ds.getValue(tournament_cls.class);
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    t_list_cls = ds.getValue(TournamentClass.class);
 
-                    if(t_name_id.equals(t_list_cls.getGame()))
-                    {
+                    if (t_name_id.equals(t_list_cls.getGame())) {
                         list.add(t_list_cls.getT_name());
                     }
 
                 }
 
-                try{
+                try {
                     t_listview.setAdapter(adapter);
-                }catch (Exception e)
-                {
+                } catch (Exception e) {
                     System.out.println(e);
                 }
             }
