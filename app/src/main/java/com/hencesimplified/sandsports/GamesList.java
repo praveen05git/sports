@@ -1,6 +1,6 @@
 package com.hencesimplified.sandsports;
 
-public class games_list {
+public class GamesList {
 
     String g_name;
 
@@ -12,11 +12,11 @@ public class games_list {
         this.g_name = g_name;
     }
 
-    public games_list(String g_name) {
+    public GamesList(String g_name) {
         this.g_name = g_name;
     }
 
-    public games_list() {
+    public GamesList() {
     }
 
 }

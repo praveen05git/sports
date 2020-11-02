@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     ListView games_listview;
-    games_list g_list_cls;
+    GamesList g_list_cls;
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         games_listview = findViewById(R.id.games_list);
 
-        g_list_cls = new games_list();
+        g_list_cls = new GamesList();
 
         databaseReference = firebaseDatabase.getReference("games/");
 
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    g_list_cls = ds.getValue(games_list.class);
+                    g_list_cls = ds.getValue(GamesList.class);
                     list.add(g_list_cls.getG_name());
                 }
 
